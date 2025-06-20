@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.example.Usuarios.model.Usuarios;
 import com.example.Usuarios.repository.UsuarioRepository;
 
-import java.util.List;
-import java.util.Random;
+
+
 
 @Profile("dev")
 @Component
@@ -18,12 +18,12 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
        Faker faker = new Faker();
-       Random random = new Random();
+       
 
        //Generar Usuarios
        for (int i = 0; i < 20; i++) {
         Usuarios usuarios = new Usuarios();
-        usuarios.setId(i+1);
+        usuarios.setCodigoUsuario(i+1);
         usuarios.setRun(faker.idNumber().valid());
         usuarios.setNombre(faker.book().genre());
         usuarios.setApellido(faker.name().lastName());

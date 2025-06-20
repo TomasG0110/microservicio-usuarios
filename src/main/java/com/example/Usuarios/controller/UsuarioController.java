@@ -56,7 +56,7 @@ public class UsuarioController {
     public ResponseEntity<Usuarios> actualizar(@PathVariable Integer id, @RequestBody Usuarios usuarios) {
         try {
             Usuarios usu = usuarioService.findById(id);
-            usu.setId(id);
+            usu.setCodigoUsuario(id);
             usu.setRun(usuarios.getRun());
             usu.setNombre(usuarios.getNombre());
             usu.setApellido(usuarios.getApellido());

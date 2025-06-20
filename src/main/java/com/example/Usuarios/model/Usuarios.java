@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Usuarios")
+@Table(name = "usuarios")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +18,7 @@ public class Usuarios {
 
     @Id
     @Column(columnDefinition = "INT(3)")
-    private Integer id;
+    private Integer codigoUsuario;
 
     @Column(nullable = false)
     private String run;
