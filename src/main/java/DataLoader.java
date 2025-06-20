@@ -21,9 +21,9 @@ public class DataLoader implements CommandLineRunner {
        
 
        //Generar Usuarios
-       for (int i = 0; i < 20; i++) {
+       for (int i = 1; i < 20; i++) {
         Usuarios usuarios = new Usuarios();
-        usuarios.setCodigoUsuario(i+1);
+        usuarios.setId(i+1);
         usuarios.setRun(faker.idNumber().valid());
         usuarios.setNombre(faker.book().genre());
         usuarios.setApellido(faker.name().lastName());

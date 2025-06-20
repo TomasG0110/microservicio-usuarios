@@ -2,7 +2,8 @@ package com.example.Usuarios.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -10,17 +11,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuariosdb")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Usuarios {
+public class Usuarios{
 
     @Id
-    @Column(columnDefinition = "INT(3)")
-    private Integer codigoUsuario;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Column(nullable = false)
+    @Column(unique = true, length = 13, nullable = false)
     private String run;
 
     @Column(nullable = false)
