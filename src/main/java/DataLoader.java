@@ -21,14 +21,14 @@ public class DataLoader implements CommandLineRunner {
        
 
        //Generar Usuarios
-       for (int i = 1; i < 20; i++) {
+       for (int i = 1; i < 1000; i++) {
         Usuarios usuarios = new Usuarios();
         usuarios.setId(i+1);
         usuarios.setRun(faker.idNumber().valid());
-        usuarios.setNombre(faker.book().genre());
+        usuarios.setNombre(faker.name().firstName());
         usuarios.setApellido(faker.name().lastName());
         usuarios.setEmail(faker.internet().emailAddress());
-        usuarios.setTelefono(faker.number().numberBetween(100000000, 999999999));
+        usuarios.setTelefono(faker.phoneNumber().cellPhone());
         usuarioRepository.save(usuarios);
         
        }
